@@ -1,0 +1,15 @@
+{% extends 'albums/base.html' %}
+{% block content %}
+
+    <section class="mw5 mw7-ns center bg-light-gray pa3 ph5-ns ">
+        <h1 class="f3 f2-m f1-l fw1 black-90 mv3">Add To Your Record Crate</h1>
+        <form enctype="multipart/form-data" method='POST'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="f6 link dim ba ph3 pv2 mb2 dib black" type='submit'>Add</button>
+        </form>
+
+</section>
+</body>
+
+{% endblock %}

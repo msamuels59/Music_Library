@@ -1,0 +1,13 @@
+{% extends 'albums/base.html' %}
+{% block content %}
+
+<section class="mw5 mw7-ns center bg-light-gray pa3 ph5-ns ">
+<h1 class="f3 f2-m f1-l fw1 black-90 mv3">Are you sure you want to toss {{ album.title }}?</h1>
+<form method='POST'>
+    {% csrf_token %}
+    <button class="f6 link dim ba ph3 pv2 mb2 dib black" type='submit'>Confirm</button>
+<a class="f6 link dim ba ph3 pv2 mb2 dib black" href='{% url "home" %}'>Never mind</a>
+</form>
+</section>
+{% endblock %}
+

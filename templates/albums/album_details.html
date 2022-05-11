@@ -1,0 +1,19 @@
+{% extends 'albums/base.html' %}
+
+{% block content %}
+
+<body>
+    <section class="mw5 mw7-ns center bg-light-gray pa3 ph5-ns ">
+        <img src="{{ album.image.url }}" alt="{{album}} Album Cover" class="w-50 db outline black-10" />
+        <h1 class="mt0">{{ album.title }} by {{ album.artist }}</h1>
+        <p class="lh-copy measure">
+            Added to your crate on {{ album.created_at }}
+        </p>
+      
+<a class="f6 link dim ba ph3 pv2 mb2 dib black" href='{% url "album_edit" pk=album.pk %}'>Edit Record</a>
+
+<a class="f6 link dim ba ph3 pv2 mb2 dib black" href='{% url "album_delete" pk=album.pk%}'>Toss This Record</a>
+</section>
+</body>
+
+{% endblock %}
